@@ -1,43 +1,39 @@
 def blanks(array, index):
-    indexes = []
-
+    indxs = []
     for i in range(len(array)):
-        #print(i)
-        for j in range(len(array[i])):
-            #print("\t", j)
-
+        for j in range(len(array[0])):
+            #print(i, j)
             if array[i][j] == " ":
-                indexes.append([i, j])
+                indxs.append([i, j])
 
-    print(indexes)
+    #print(indxs)
 
-    print(index)
-
-    if index in indexes:
+    if index in indxs:
         blank = True
 
     else:
+        print(array[index[0]][index[1]])
         blank = False
 
-    print(blank)
+    return indxs, blank
+
+
+
 
 
 if __name__ == '__main__':
     print("Blanks")
 
 
-
     array_1 = [["s", "m" ," ", "h"],
                ["h", " ", " ", "s"], 
                ["m", " ", "m", "m"]]
 
-    index_1 = [0, 0]
+    index_1 = (3, 1)
 
     array_2 = [[" ", " ", "r"],
                 [" ", " ", "p"]]
 
-    index_2 = [0, 0]
+    index_2 = (0, 0)
 
-    blanks(array_1, index_1)
-    blanks(array_2, index_2)
-    
+    print(blanks(array_1, index_1))
