@@ -21,8 +21,10 @@ def blanks(array, index):
 
     print(blank)
 
+
 if __name__ == '__main__':
     print("Blanks")
+
 
 
     array_1 = [["s", "m" ," ", "h"],
@@ -38,4 +40,4 @@ if __name__ == '__main__':
 
     blanks(array_1, index_1)
     blanks(array_2, index_2)
-
+    
