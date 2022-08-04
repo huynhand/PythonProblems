@@ -1,15 +1,16 @@
-def print_board(board):
-    print("\n")
-    for i in range(5):
-        if i%2 == 0:
-            print (".", board[i][0], ".", board[i][1], ".", board[i][2], ".")
-        else:
-            print (board[i][0], " ", board[i][1], " ", board[i][2], " ", board[i][3])
-    print("\n")
-
-
-def complete_box():
+def complete_box(array):
     print("counting completed boxes ...")
+    
+    box_count = 0
+
+    for i in range (len(array)):
+        for j in range (len(array[i])):
+            if i == len(array) - 1 or j == (len(array[i+1]) - 1):
+                break
+            if array[i][j] == '_' and array[i+1][j] == '|' and array[i+1][j+1] == '|':
+                box_count = box_count + 1
+
+    return box_count
 
 if __name__ == '__main__':
     print("Dots and Boxes")
@@ -26,8 +27,14 @@ if __name__ == '__main__':
                ["|", "|", " ", " "],
                ["_", " ", " "]]
 
-    print_board(array_1)
+    array_3 = [["_", "_", "_"],
+               ["|", "|", "|", "|"],
+               ["_", "_", "_"],
+               ["|", "|", "|", "|"],
+               ["_", "_", "_"]]
 
-    complete_box(array_1)
+    print(complete_box(array_2))
 
+    print(complete_box(array_1))
 
+    print(complete_box(array_3))
